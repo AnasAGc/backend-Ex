@@ -10,8 +10,9 @@ const PORT=process.env.PORT;
 server.listen(PORT,()=>{
     console.log(`Port ${PORT}`);
 })
+const MONGO=process.env.MONGO;
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/drink', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGO, {useNewUrlParser: true, useUnifiedTopology: true});
 
 server.get('/', // our endpoint name
 function (req, res) { 
